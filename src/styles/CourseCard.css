@@ -1,160 +1,127 @@
-/* styles/CourseCard.css */
-
-/* Basic styling for the course card */
 .course-card {
-    background-color: #1f2937; /* Dark gray background */
-    border: 1px solid #374151; /* Slightly lighter gray border */
-    border-radius: 0.5rem;     /* Rounded corners */
-    padding: 1rem;           /* Internal spacing */
-    margin-bottom: 1rem;      /* Spacing between cards */
-}
-
-/* Styling for the "Give Feedback" button */
-.give-feedback-button {
-    background-color: #2563eb; /* Blue button */
-    color: white;             /* White text */
-    padding: 0.5rem 1rem;      /* Padding around text */
-    border-radius: 0.25rem;    /* Rounded corners */
-    cursor: pointer;          /* Change cursor on hover */
-    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
-    width: 100%;              /* Make the button full-width */
-    margin-top: 0.5rem;      /* Add some spacing above the button */
-    border: none;             /* Remove default button border */
-}
-
-.give-feedback-button:hover {
-    background-color: #1d4ed8; /* Darker blue on hover */
-}
-
-/* Styling for the modal overlay */
-.feedback-modal {
-    position: fixed;        /* Stay in place even when scrolling */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .give-feedback-button {
+    background-color: #16a34a; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .give-feedback-button:hover {
+    background-color: #15803d; /* Darker Green */
+  }
+  
+  .feedback-modal {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    display: flex;          /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    z-index: 1000;          /* Ensure it's on top of other content */
-}
-
-/* Styling for the modal content container */
-.feedback-content {
-    background-color: white;  /* White background */
-    padding: 1.5rem;         /* Internal spacing */
-    border-radius: 0.5rem;    /* Rounded corners */
-    width: 80%;             /* Responsive width */
-    max-width: 600px;        /* Maximum width */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    max-height: 80vh;       /* Limit height to 80% of viewport height */
-    overflow-y: auto;        /* Add vertical scrollbar if content overflows */
-}
-
-/* Styling for the header section within the modal */
-.feedback-header {
-    display: flex;             /* Use flexbox for layout */
-    justify-content: space-between; /* Space out title and close button */
-    align-items: center;      /* Vertically align items */
-    margin-bottom: 1rem;    /* Spacing below the header */
-}
-
-/* Styling for the close button */
-.close-button {
-    background-color: #ef4444; /* Red close button */
-    color: white;             /* White text */
-    border: none;             /* Remove default border */
-    padding: 0.25rem 0.5rem;  /* Padding around the 'X' */
-    border-radius: 0.25rem;    /* Rounded corners */
-    cursor: pointer;          /* Change cursor on hover */
-    font-size: 1rem;          /* Larger font size for the 'X' */
-    transition: background-color 0.2s ease; /* Smooth transition for hover */
-}
-
-.close-button:hover {
-    background-color: #dc2626; /* Darker red on hover */
-}
-
-/* Styling for the container of questions */
-.feedback-questions {
-    margin-bottom: 1rem;      /* Spacing below the questions */
-}
-
-/* Styling for each individual question */
-.question {
-    margin-bottom: 1rem;      /* Spacing between questions */
-    padding: 10px;           /* Internal spacing */
-    border: 1px solid #ccc;   /* Light gray border */
-    border-radius: 5px;      /* Rounded corners */
-}
-
-/* Styling for the question text */
-.question-text {
-    font-weight: bold;        /* Make the question text bold */
-    margin-bottom: 0.5rem;    /* Spacing below the question text */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .feedback-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .feedback-title {
+    margin: 0;
+  }
+  
+  .close-button {
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+    border: none;
+    background: none;
+  }
+  
+  .feedback-questions {
+    margin-bottom: 20px;
+  }
+  
+  .question {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .question-text {
+    margin-bottom: 5px;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .option-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .option-radio {
+    margin-right: 5px;
+  }
+  
+  .option-text {
+    margin-left: 5px;
     color: black;
-}
-
-/* Styling for the container of radio button options */
-.options {
-    display: flex;            /* Use flexbox for layout */
-    flex-direction: column;   /* Stack options vertically */
-}
-
-/* Styling for each radio button option label */
-.option-label {
-    display: flex;            /* Use flexbox for layout */
-    align-items: center;      /* Vertically align radio button and text */
-    margin-bottom: 0.25rem;   /* Spacing between options */
-}
-
-/* Styling for the radio button itself */
-.option-radio {
-    margin-right: 0.5rem;     /* Spacing between radio button and text */
-}
-.option-text{
-  color: black;
-}
-
-/* Styling for the submit button */
-.submit-feedback {
-    background-color: #22c55e; /* Green submit button */
-    color: white;             /* White text */
-    padding: 0.5rem 1rem;      /* Padding around text */
-    border-radius: 0.25rem;    /* Rounded corners */
-    cursor: pointer;          /* Change cursor on hover */
-    transition: background-color 0.2s ease; /* Smooth transition for hover */
-    width: 100%;              /* Make the button full-width */
-    margin-top: 1rem;         /* Spacing above the button */
-    border: none;             /* Remove default button border */
-}
-
-.submit-feedback:hover {
-    background-color: #16a34a; /* Darker green on hover */
-}
-
-/* Styling for error messages */
-.error-message {
-    color: red;               /* Red text color */
-    margin-top: 0.5rem;      /* Spacing above the message */
-    text-align: center;       /* Center-align the message */
-}
-
-/* Style for the textarea */
-.feedback-modal textarea {
-    color: black;
-    height: 100px; /* Add a fixed height */
-    resize: vertical; /* Allow vertical resizing */
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .feedback-content {
-        width: 95%;         /* Wider content area on smaller screens */
-        padding: 1rem;      /* Less padding on smaller screens */
-    }
-     .feedback-header{
-      display: block; /* Stack header elements vertically */
-    }
-}
+  }
+  
+  .submit-feedback {
+    background-color: #16a34a; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-feedback:hover {
+    background-color: #15803d; /* Darker Green */
+  }
+  
+  /* Add styles for the feedback modal text */
+  .feedback-modal .feedback-content p {
+    color: black; /* Set text color to black */
+  }
+  
+  .feedback-modal .feedback-content h3 {
+    color: black; /* Set h3 text color to black */
+  }
+  
+  .feedback-modal .feedback-content h2 {
+    color: black; /* Set h2 text color to black */
+  }
+  
+  /* Style for the textarea */
+  .feedback-modal textarea {
+    color: black; /* Set text color to black */
+  }
